@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shop</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="main">
+        <h1>Тестовый магазин</h1>
+        <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png">
+        <p class="text">Ну и че мне тут писать? я хтмл только в школе учил</p>
+        <button id="buy" class="button">Отдать шекели</button>
+    </div>
+    <form>
+        <input type="text" placeholder="Имя" id="user_name">
+        <input type="text" placeholder="Email" id="user_email">
+        <input type="text" placeholder="Телефон" id="user_phone">
+        <button id="order" class="button">Оформить</button>
+    </form>
+    
+    <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм требуется посмотреть не нужно ли его в head прописывать-->
+    <script>
+        let tg = window.Telegram.WebApp;
+        
+        tg.expand();
+        
+    </script>
+</body>
+</html>
