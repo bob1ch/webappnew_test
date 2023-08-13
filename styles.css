@@ -133,6 +133,7 @@
 }
 
 #form {
+    display: none;
     border: none;
     font-size: 20px;
     color: var(--tg-theme-button-color);
