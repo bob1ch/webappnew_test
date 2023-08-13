@@ -18,7 +18,7 @@
     		<a href="" class="product">
         		<div class="product-photo">
                 	<img src="sushi.jpg" alt="">
-                	<button id="buy1" class="buttons">Заказать</button>
+                	<button id="buy" class="buttons">Заказать</button>
                 </div>
     		</a>
     	</li>
@@ -26,7 +26,7 @@
     		<a href="" class="product">
         		<div class="product-photo">
                 	<img src="pizza.jpg" alt="">
-                	<button id="buy2" class="buttons">Заказать</button>
+                	<button id="buy" class="buttons">Заказать</button>
                 </div>
     		</a>
     	</li>
@@ -34,7 +34,7 @@
     		<a href="" class="product">
         		<div class="product-photo">
                 	<img src="china.png" alt="">
-                	<button id="buy3" class="buttons">Заказать</button>
+                	<button id="buy" class="buttons">Заказать</button>
                 </div>
     		</a>
     	</li>
@@ -42,7 +42,7 @@
     		<a href="" class="product">
         		<div class="product-photo">
                 	<img src="cola.png" alt="">
-                	<button id="buy4" class="buttons">Заказать</button>
+                	<button id="buy" class="buttons">Заказать</button>
                 </div>
     		</a>
     	</li>
@@ -52,7 +52,7 @@
         <input type="text" placeholder="Имя" id="user_name">
         <input type="text" placeholder="Email" id="user_email">
         <input type="text" placeholder="Телефон" id="user_phone">
-        <div id="form">
+        <div>
             <button id="order" class="button">Оформить</button>
         </div>
     </form>
@@ -64,11 +64,11 @@
         
         tg.expand();
         
-        let buy1 = document.getElementById("buy1");
+        let buy = document.getElementById("buy");
         let order= document.getElementById("order");
         tg.expand();
         
-        buy1.addEventListener("click", () => {
+        buy.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
             document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name
