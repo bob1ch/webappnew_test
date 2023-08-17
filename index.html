@@ -9,24 +9,24 @@
 </head>
 <body>
 <div id="main">
-    <div id="buy1">
+    <div id="buy">
         <img src="china.png">
     </div>
         <button id="buy1" class="button">Отдать шекели</button>
     
 
-    <div id="buy2">
+    <div id="buy">
         <img src="sushi.jpg">
     </div>
         <button id="buy2" class="button">Отдать шекели</button>
 
 
-    <div id="buy3">
+    <div id="buy">
         <img src="pizza.jpg">
     </div>
         <button id="buy3" class="button">Отдать шекели</button>
 
-    <div id="buy4">
+    <div id="buy">
         <img src="cola.png">
     </div>
         <button id="buy4" class="button">Отдать шекели</button>
@@ -49,27 +49,28 @@
         let buy2 = document.getElementById("buy2");
         let buy3 = document.getElementById("buy3");
         let buy4 = document.getElementById("buy4");
+        let food = "none"
         
         
         buy1.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
-            let food = "Го Ба Жоу"
+            food = "Го ба Джоу"
         });
         buy2.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
-            let food = "Суши"
+            food = "Суши"        
         });
         buy3.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
-            let food = "Пицца"
+            food = "Пицца"
         });
         buy4.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
-            let food = "Кола"
+            food = "Кола"
         });
         
         order.addEventListener("click", () => {
@@ -81,7 +82,6 @@
                name: name,
                email: email,
                phone: phone
-               food: food
            }
            
            tg.sendData(JSON.stringify(data));
