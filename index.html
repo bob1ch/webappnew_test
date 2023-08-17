@@ -8,70 +8,68 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div id="main">
-        <h1>Тестовый магазин</h1>
+<div id="main">
+    <div id="buy1">
+        <img src="china.png">
     </div>
+        <button id="buy1" class="button">Отдать шекели</button>
+    
 
-    
-    <ul class="products clearfix">
-    	<li class="product-wrapper">
-    		<a href="" class="product">
-        		<div class="product-photo">
-                	<img src="sushi.jpg" alt="">
-                	<button id="buy" class="buttons">Заказать</button>
-                </div>
-    		</a>
-    	</li>
-    	<li class="product-wrapper">
-    		<a href="" class="product">
-        		<div class="product-photo">
-                	<img src="pizza.jpg" alt="">
-                	<button id="buy" class="buttons">Заказать</button>
-                </div>
-    		</a>
-    	</li>
-    	<li class="product-wrapper">
-    		<a href="" class="product">
-        		<div class="product-photo">
-                	<img src="china.png" alt="">
-                	<button id="buy" class="buttons">Заказать</button>
-                </div>
-    		</a>
-    	</li>
-    	<li class="product-wrapper">
-    		<a href="" class="product">
-        		<div class="product-photo">
-                	<img src="cola.png" alt="">
-                	<button id="buy" class="buttons">Заказать</button>
-                </div>
-    		</a>
-    	</li>
-    </ul>
-    
+    <div id="buy2">
+        <img src="sushi.jpg">
+    </div>
+        <button id="buy2" class="button">Отдать шекели</button>
+
+
+    <div id="buy3">
+        <img src="pizza.jpg">
+    </div>
+        <button id="buy3" class="button">Отдать шекели</button>
+
+    <div id="buy4">
+        <img src="cola.png">
+    </div>
+        <button id="buy4" class="button">Отдать шекели</button>
+
+ </div>    
+
     <form id="form">
         <input type="text" placeholder="Имя" id="user_name">
         <input type="text" placeholder="Email" id="user_email">
         <input type="text" placeholder="Телефон" id="user_phone">
-        <div>
-            <button id="order" class="button">Оформить</button>
-        </div>
+        <button id="order" class="button">Оформить</button>
     </form>
-    
+   
     <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм требуется посмотреть не нужно ли его в head прописывать-->
     <script>
-        
         let tg = window.Telegram.WebApp;
-        
         tg.expand();
         
-        let buy = document.getElementById("buy");
-        let order= document.getElementById("order");
-        tg.expand();
+        let buy1 = document.getElementById("buy1");
+        let buy2 = document.getElementById("buy2");
+        let buy3 = document.getElementById("buy3");
+        let buy4 = document.getElementById("buy4");
         
-        buy.addEventListener("click", () => {
+        
+        buy1.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
-            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name
+            let food = "Го Ба Жоу"
+        });
+        buy2.addEventListener("click", () => {
+            document.getElementById("main").style.display = "none";
+            document.getElementById("form").style.display = "block";
+            let food = "Суши"
+        });
+        buy3.addEventListener("click", () => {
+            document.getElementById("main").style.display = "none";
+            document.getElementById("form").style.display = "block";
+            let food = "Пицца"
+        });
+        buy4.addEventListener("click", () => {
+            document.getElementById("main").style.display = "none";
+            document.getElementById("form").style.display = "block";
+            let food = "Кола"
         });
         
         order.addEventListener("click", () => {
@@ -83,13 +81,13 @@
                name: name,
                email: email,
                phone: phone
+               food: food
            }
            
            tg.sendData(JSON.stringify(data));
            
            tg.close(); 
         });
-        
     </script>
 </body>
 </html>
